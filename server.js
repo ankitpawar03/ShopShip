@@ -9,12 +9,18 @@ import productRoutes from './routes/productRoute.js'
 import cors from 'cors';
 
 import path from 'path';
+import {fileURLToPath} from "url"
 
 // configure env
 dotenv.config();
 
 // database config
 connectDB();
+
+//ES module fix
+const __filename = fileURLToPath(import.meta.url);
+
+const __dirname = path.dirname(__filename);
 
 // rest object
 const app = express()
